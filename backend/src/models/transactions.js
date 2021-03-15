@@ -2,7 +2,7 @@ const sequelize = require("../config/db");
 
 const getTransactions = (id) =>
   sequelize.query(
-    "SELECT id_transaccion, fecha, valor, concepto, tipo FROM transacciones WHERE id_usuario1 = ?",
+    "SELECT id_transaccion, fecha, valor, concepto, tipo FROM transacciones WHERE id_usuario1 = ? ORDER BY fecha DESC",
     { replacements: [id], type: sequelize.QueryTypes.SELECT }
   );
 

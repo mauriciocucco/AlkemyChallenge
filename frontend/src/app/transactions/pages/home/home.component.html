@@ -1,0 +1,53 @@
+<div>
+  <mat-card>
+    <div id="balance-div">
+      <span>Saldo</span>
+      <span class="example-spacer"></span>
+      <span
+        ><strong>{{ balance | currency: "ARS" }}</strong></span
+      >
+    </div>
+  </mat-card>
+  <mat-accordion displayMode="flat">
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <span>Últimos movimientos</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <table mat-table [dataSource]="transactions" class="mat-elevation-z8">
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef>Fecha</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.fecha | date: "short" }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="concepto">
+          <th mat-header-cell *matHeaderCellDef>Concepto</th>
+          <td mat-cell *matCellDef="let element">{{ element.concepto }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="tipo">
+          <th mat-header-cell *matHeaderCellDef>Tipo</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.tipo | titlecase }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+          <th mat-header-cell *matHeaderCellDef>Valor</th>
+          <td mat-cell *matCellDef="let element">
+            <strong>{{ element.valor | currency: "ARS" }}</strong>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

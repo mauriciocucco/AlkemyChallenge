@@ -1,0 +1,47 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav autoFocus="false">
+    <mat-toolbar color="primary">
+      <span id="sidenav-title">Menú</span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a
+        routerLink="home"
+        routerLinkActive="active"
+        mat-list-item
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon mat-list-icon>account_balance</mat-icon>
+        <span class="menu-option">Home</span></a
+      >
+      <a
+        routerLink="add"
+        routerLinkActive="active"
+        mat-list-item
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon mat-list-icon>add</mat-icon>
+        <span class="menu-option">Nueva Transacción</span></a
+      >
+      <a
+        routerLink="list"
+        routerLinkActive="active"
+        mat-list-item
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon mat-list-icon>list</mat-icon>
+        <span class="menu-option">Transacciones</span></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar color="primary">
+    <mat-icon (click)="sidenav.toggle()" title="Menu">menu</mat-icon>
+    <span id="app-title">MyWallet</span>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <span class="bienvenida">Bienvenido</span>
+    <mat-icon title="Logout">logout</mat-icon>
+  </mat-toolbar>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
