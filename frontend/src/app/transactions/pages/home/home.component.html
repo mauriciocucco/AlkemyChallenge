@@ -48,6 +48,12 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
+      <div class="button-div">
+        <button mat-raised-button color="primary" (click)="goToAddSection()">
+          <mat-icon>add</mat-icon>
+          Nueva Transacción
+        </button>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

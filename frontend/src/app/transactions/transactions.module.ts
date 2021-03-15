@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { AddComponent } from './pages/add/add.component';
@@ -15,6 +16,8 @@ import { TransactionsRoutingModule } from './transactions-routing.module';
     MaterialModule,
     TransactionsRoutingModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class TransactionsModule {}

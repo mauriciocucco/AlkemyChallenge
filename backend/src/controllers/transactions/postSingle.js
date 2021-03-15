@@ -5,7 +5,7 @@ const postSingle = (req, res) => {
   const idTransaction = uuid();
 
   createTransaction(idTransaction, req.user.id_usuario, req.body)
-    .then((resp) => res.status(200).send({ id: resp[0] }))
+    .then((resp) => res.status(200).send({ id: idTransaction }))
     .catch((e) => {
       console.error("Error: ", e);
       res.status(500).send({ error: "Server Error" });

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { TransactionsService } from '../../services/transactions.service';
 
 @Component({
@@ -8,6 +9,9 @@ import { TransactionsService } from '../../services/transactions.service';
     `
       table {
         width: 100%;
+      }
+      button {
+        margin: 15px 10px 0px 0px;
       }
       mat-card,
       mat-panel-title {
@@ -22,21 +26,30 @@ import { TransactionsService } from '../../services/transactions.service';
       #balance-div {
         display: flex;
       }
+      .button-div {
+        display: flex;
+        flex-direction: row-reverse;
+      }
     `,
   ],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   transactions: any[] = [];
   balance: number = 0;
   displayedColumns: string[] = ['fecha', 'concepto', 'tipo', 'valor'];
   panelOpenState = false;
 
-  constructor(private transactionsService: TransactionsService) {}
-
-  ngOnInit(): void {
+  constructor(
+    private transactionsService: TransactionsService,
+    private router: Router
+  ) {
     this.transactionsService.getTransactions().subscribe((resp) => {
       this.transactions = resp.transactions.slice(0, 10);
       this.balance = resp.balance;
     });
+  }
+
+  goToAddSection() {
+    this.router.navigate(['transactions/add']);
   }
 }

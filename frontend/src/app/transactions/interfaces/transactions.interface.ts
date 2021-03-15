@@ -4,9 +4,9 @@ export interface Transactions {
 }
 
 export interface Transaction {
-  id_transaccion: number;
+  id_transaccion?: number;
   concepto: string;
-  fecha: Date;
+  fecha?: Date;
   tipo: string;
   valor: number;
 }

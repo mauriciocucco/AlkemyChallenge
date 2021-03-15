@@ -1,1 +1,39 @@
-<p>add works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Nueva Transacción</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" autocomplete="off">
+      <mat-form-field appearance="outline">
+        <mat-label>Concepto</mat-label>
+        <input matInput formControlName="concepto" required />
+        <mat-error *ngIf="noValidField('concepto')">{{
+          getErrorMessage("concepto")
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipo" required>
+          <mat-option value="ingreso">Ingreso</mat-option>
+          <mat-option value="egreso">Egreso</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Valor</mat-label>
+        <input matInput type="number" formControlName="valor" required />
+        <mat-error *ngIf="noValidField('valor')">{{
+          getErrorMessage("valor")
+        }}</mat-error>
+      </mat-form-field>
+    </form>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      (click)="sendForm()"
+      [disabled]="form.invalid"
+    >
+      Enviar
+    </button>
+  </mat-card-content>
+</mat-card>

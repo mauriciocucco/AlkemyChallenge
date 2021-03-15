@@ -5,7 +5,7 @@ CREATE DATABASE challengue;
 USE challengue;
 
 CREATE TABLE usuarios (
-    id_usuario int(11) AUTO_INCREMENT NOT NULL,
+    id_usuario (11) AUTO_INCREMENT NOT NULL,
     nombre_completo varchar(36) NOT NULL,
     email varchar(36) NOT NULL,
     password varchar(40) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE usuarios (
 ) ENGINE=InnoDB;
 
 CREATE TABLE transacciones (
-    id_transaccion int(11) NOT NULL,
+    id_transaccion varchar(36) NOT NULL,
     id_usuario1 int(11) NOT NULL,
     id_categoria1 int(11) NULL,
     fecha timestamp NULL DEFAULT CURRENT_TIMESTAMP,
