@@ -1,0 +1,31 @@
+<div class="dialog">
+  <h1>¿Está seguro?</h1>
+  <p>{{ data.length | i18nPlural: transactionsMap }}:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Concepto</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of data">
+        <td>{{ transaction.fecha | date: "short" }}</td>
+        <td>{{ transaction.concepto }}</td>
+        <td>{{ transaction.tipo | titlecase }}</td>
+        <td>{{ transaction.valor | currency: "ARS" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h4><strong>¿Desea Continuar?</strong></h4>
+  <div class="buttons">
+    <button mat-fab color="warn" (click)="delete()">
+      <mat-icon>delete_forever</mat-icon>
+    </button>
+    <button mat-fab color="basic" (click)="close()">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </div>
+</div>

@@ -49,7 +49,11 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
       <div class="button-div">
-        <button mat-raised-button color="primary" (click)="goToAddSection()">
+        <button
+          mat-raised-button
+          color="primary"
+          routerLink="/transactions/add"
+        >
           <mat-icon>add</mat-icon>
           Nueva Transacción
         </button>

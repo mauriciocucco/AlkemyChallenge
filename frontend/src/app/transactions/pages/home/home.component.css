@@ -1,0 +1,16 @@
+button {
+  margin: 15px 10px 0px 0px;
+}
+mat-card,
+mat-panel-title {
+  font-size: 22px;
+}
+mat-expansion-panel {
+  margin-top: 20px;
+}
+mat-expansion-panel-header {
+  padding: 0px 16px;
+}
+#balance-div {
+  display: flex;
+}

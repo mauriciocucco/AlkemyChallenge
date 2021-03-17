@@ -1,0 +1,21 @@
+#app-title {
+  margin-left: 20px;
+  font-weight: bold;
+}
+#sidenav-title {
+  display: block;
+  margin: 0 auto;
+}
+.active {
+  background: rgba(0, 0, 0, 0.04);
+}
+.menu-option {
+  padding: 4px;
+}
+.container {
+  margin: 30px 50px;
+}
+.bienvenida {
+  margin-right: 20px !important;
+  font-size: 14px;
+}

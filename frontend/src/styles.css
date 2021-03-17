@@ -8,12 +8,34 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+table {
+  width: 100%;
+}
 thead {
   background-color: #eeeeee !important;
 }
 th {
   color: black !important;
 }
+button,
+mat-icon {
+  cursor: pointer;
+}
 .example-spacer {
   flex: 1 1 auto;
+}
+mat-card-header {
+  justify-content: center;
+}
+mat-form-field {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.button-div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.edit-button {
+  background-color: green;
+  color: white;
 }

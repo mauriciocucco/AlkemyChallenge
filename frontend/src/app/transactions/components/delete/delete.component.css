@@ -1,0 +1,14 @@
+table {
+  margin-bottom: 50px;
+}
+th {
+  font-weight: 500;
+}
+.dialog {
+  display: block;
+  text-align: center;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
