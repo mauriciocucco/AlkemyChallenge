@@ -39,3 +39,22 @@ mat-form-field {
   background-color: green;
   color: white;
 }
+.container {
+  margin: 30px 50px;
+}
+.dialog {
+  display: block;
+  text-align: center;
+}
+.special-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.register-div {
+  text-align: center;
+}
+.template-p {
+  text-align: center;
+}

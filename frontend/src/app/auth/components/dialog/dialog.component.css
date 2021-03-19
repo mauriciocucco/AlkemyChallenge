@@ -1,0 +1,16 @@
+h3 {
+  font-weight: 500;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.register-button {
+  background-color: green;
+  color: white;
+}
+mat-icon {
+  color: red;
+  font-size: 38px;
+  cursor: default;
+}

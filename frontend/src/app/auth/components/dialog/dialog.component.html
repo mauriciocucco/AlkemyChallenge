@@ -1,0 +1,17 @@
+<div class="dialog">
+  <div>
+    <mat-icon>error</mat-icon>
+    <h3>Usted no se encuentra registrado</h3>
+  </div>
+  <div class="buttons">
+    <button
+      type="button"
+      class="register-button"
+      mat-stroked-button
+      (click)="register()"
+    >
+      Registrarse
+    </button>
+    <button mat-stroked-button (click)="close()">Cancelar</button>
+  </div>
+</div>

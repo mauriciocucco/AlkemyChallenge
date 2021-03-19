@@ -18,7 +18,12 @@
           <span>Últimos movimientos</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <table mat-table [dataSource]="transactions" class="mat-elevation-z8">
+      <table
+        mat-table
+        [dataSource]="transactions"
+        class="mat-elevation-z8"
+        *ngIf="transactions.length > 0; else noTransactions"
+      >
         <ng-container matColumnDef="fecha">
           <th mat-header-cell *matHeaderCellDef>Fecha</th>
           <td mat-cell *matCellDef="let element">
@@ -61,3 +66,7 @@
     </mat-expansion-panel>
   </mat-accordion>
 </div>
+
+<ng-template #noTransactions>
+  <p class="template-p">No hay transacciones realizadas hasta el momento.</p>
+</ng-template>

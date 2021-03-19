@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { SnackbarService } from '../../services/snackbar.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SnackbarService } from '../../../services/snackbar.service';
+import { ValidatorsService } from '../../../services/validators.service';
 import { TransactionsService } from '../../services/transactions.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { TransactionsService } from '../../services/transactions.service';
   styleUrls: ['./add.component.css'],
 })
 export class AddComponent {
-  form = this.fb.group({
+  form: FormGroup = this.fb.group({
     concepto: ['', [Validators.required, Validators.minLength(4)]],
     tipo: ['ingreso', [Validators.required]],
     valor: [, [Validators.required, Validators.min(1)]],
@@ -18,24 +19,9 @@ export class AddComponent {
   constructor(
     private fb: FormBuilder,
     private transactionsService: TransactionsService,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
+    public validatorsService: ValidatorsService
   ) {}
-
-  noValidField(field: string) {
-    return this.form.get(field)?.errors && this.form.get(field)?.touched;
-  }
-
-  getErrorMessage(field: string) {
-    if (this.form.get(field)?.hasError('required')) {
-      return `Ingrese un ${field}`;
-    } else if (this.form.get(field)?.hasError('minlength')) {
-      return 'Debe tener al menos 4 caracteres';
-    }
-
-    return this.form.get(field)?.hasError('min')
-      ? 'El valor debe ser mayor a 0'
-      : '';
-  }
 
   sendForm() {
     if (this.form.invalid) {

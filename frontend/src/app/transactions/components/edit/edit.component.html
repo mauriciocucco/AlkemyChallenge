@@ -4,15 +4,15 @@
     <mat-form-field appearance="fill">
       <mat-label>Concepto</mat-label>
       <input matInput formControlName="concepto" required />
-      <mat-error *ngIf="noValidField('concepto')">{{
-        getErrorMessage("concepto")
+      <mat-error *ngIf="validatorsService.noValidField('concepto', form)">{{
+        validatorsService.getErrorMessage("concepto", form)
       }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Valor</mat-label>
       <input matInput type="number" formControlName="valor" required />
-      <mat-error *ngIf="noValidField('valor')">{{
-        getErrorMessage("valor")
+      <mat-error *ngIf="validatorsService.noValidField('valor', form)">{{
+        validatorsService.getErrorMessage("valor", form)
       }}</mat-error>
     </mat-form-field>
   </form>

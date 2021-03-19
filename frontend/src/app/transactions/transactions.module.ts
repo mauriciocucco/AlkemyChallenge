@@ -8,7 +8,6 @@ import { EditComponent } from './components/edit/edit.component';
 import { AddComponent } from './pages/add/add.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
-import { SnackbarService } from './services/snackbar.service';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { TransactionsRoutingModule } from './transactions-routing.module';
 
@@ -29,6 +28,5 @@ import { TransactionsRoutingModule } from './transactions-routing.module';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [SnackbarService],
 })
 export class TransactionsModule {}

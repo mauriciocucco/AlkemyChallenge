@@ -5,13 +5,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { switchMap } from 'rxjs/operators';
+import { SnackbarService } from '../../../services/snackbar.service';
 import { DeleteComponent } from '../../components/delete/delete.component';
 import { EditComponent } from '../../components/edit/edit.component';
 import {
   Transaction,
   Transactions,
 } from '../../interfaces/transactions.interface';
-import { SnackbarService } from '../../services/snackbar.service';
 import { TransactionsService } from '../../services/transactions.service';
 
 @Component({
@@ -27,6 +27,7 @@ export class ListComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   selection = new SelectionModel<Transaction>(true, []);
   deleteMessage: string = '';
+  inputFilter: string = '';
 
   constructor(
     private transactionsService: TransactionsService,

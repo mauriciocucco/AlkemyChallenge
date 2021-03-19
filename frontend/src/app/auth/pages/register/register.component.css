@@ -1,0 +1,21 @@
+a {
+  color: #118411;
+}
+button {
+  font-size: 18px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+mat-card {
+  width: 40%;
+}
+mat-card-header {
+  background-color: #118411;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+mat-card-title.mat-card-title {
+  color: white;
+  margin-top: 12px;
+}

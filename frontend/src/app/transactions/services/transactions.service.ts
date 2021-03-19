@@ -12,8 +12,7 @@ import {
 })
 export class TransactionsService {
   private baseUrl = `${environment.urlServer}/transactions`;
-  private token: string =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c3VhcmlvIjozLCJpYXQiOjE2MTU5MzI0MTcsImV4cCI6MTYxNTk2MTIxN30.V5PbyYqr8KzvhjRdO4gOEnur257fg3xfYB3FOJENwbQ';
+  private token: string = JSON.parse(localStorage.getItem('token')!);
   private headers = new HttpHeaders().set(
     'Authorization',
     `Bearer ${this.token}`

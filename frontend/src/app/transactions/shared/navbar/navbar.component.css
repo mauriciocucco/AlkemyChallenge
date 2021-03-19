@@ -1,6 +1,15 @@
+a {
+  text-decoration: none;
+}
+mat-toolbar {
+  background: linear-gradient(to right, #3f51b5, #6953ba);
+  color: white;
+}
 #app-title {
-  margin-left: 20px;
+  color: white;
+  cursor: pointer;
   font-weight: bold;
+  margin-left: 20px;
 }
 #sidenav-title {
   display: block;
@@ -11,9 +20,6 @@
 }
 .menu-option {
   padding: 4px;
-}
-.container {
-  margin: 30px 50px;
 }
 .bienvenida {
   margin-right: 20px !important;

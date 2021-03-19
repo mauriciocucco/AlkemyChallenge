@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ValidatorsService } from '../../../services/validators.service';
 import { Edit } from '../../interfaces/transactions.interface';
 
 @Component({
@@ -9,7 +10,7 @@ import { Edit } from '../../interfaces/transactions.interface';
   styleUrls: ['./edit.component.css'],
 })
 export class EditComponent {
-  form = this.fb.group({
+  form: FormGroup = this.fb.group({
     concepto: [
       this.data.concepto,
       [Validators.required, Validators.minLength(4)],
@@ -20,24 +21,9 @@ export class EditComponent {
   constructor(
     private dialogRef: MatDialogRef<EditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Edit,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    public validatorsService: ValidatorsService
   ) {}
-
-  noValidField(field: string) {
-    return this.form.get(field)?.errors && this.form.get(field)?.touched;
-  }
-
-  getErrorMessage(field: string) {
-    if (this.form.get(field)?.hasError('required')) {
-      return `Ingrese un ${field}`;
-    } else if (this.form.get(field)?.hasError('minlength')) {
-      return 'Debe tener al menos 4 caracteres';
-    }
-
-    return this.form.get(field)?.hasError('min')
-      ? 'El valor debe ser mayor a 0'
-      : '';
-  }
 
   editTransaction() {
     this.dialogRef.close(this.form.value);

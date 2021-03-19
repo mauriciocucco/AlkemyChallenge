@@ -1,1 +1,74 @@
-<p>register works!</p>
+<div class="special-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Registro</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form" autocomplete="off">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre Completo</mat-label>
+          <input matInput formControlName="nombre_completo" required />
+          <mat-error
+            *ngIf="validatorsService.noValidField('nombre_completo', form)"
+            >{{
+              validatorsService.getErrorMessage("nombre_completo", form)
+            }}</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required />
+          <mat-error *ngIf="validatorsService.noValidField('email', form)">{{
+            validatorsService.getErrorMessage("email", form)
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" required type="password" />
+          <mat-error *ngIf="validatorsService.noValidField('password', form)">{{
+            validatorsService.getErrorMessage("password", form)
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Confirme su password</mat-label>
+          <input
+            matInput
+            formControlName="confirm_password"
+            required
+            type="password"
+          />
+          <mat-error
+            *ngIf="validatorsService.noValidField('confirm_password', form)"
+            >{{
+              validatorsService.getErrorMessage("confirm_password", form)
+            }}</mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Saldo actual</mat-label>
+          <input matInput formControlName="saldo" required type="number" />
+          <mat-error *ngIf="validatorsService.noValidField('saldo', form)">{{
+            validatorsService.getErrorMessage("saldo", form)
+          }}</mat-error>
+        </mat-form-field>
+      </form>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="register()"
+        [disabled]="form.invalid"
+      >
+        Registrarse
+      </button>
+      <div class="register-div">
+        <label
+          >Si ya se encuentra registrado
+          <a routerLink="/auth/login"
+            ><span><strong>ingrese aquí</strong></span></a
+          >
+        </label>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

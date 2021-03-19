@@ -1,6 +1,6 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav autoFocus="false">
-    <mat-toolbar color="primary">
+    <mat-toolbar>
       <span id="sidenav-title">Menú</span>
     </mat-toolbar>
     <mat-nav-list>
@@ -33,13 +33,13 @@
       >
     </mat-nav-list>
   </mat-sidenav>
-  <mat-toolbar color="primary">
+  <mat-toolbar>
     <mat-icon (click)="sidenav.toggle()" title="Menu">menu</mat-icon>
-    <span id="app-title">MyWallet</span>
+    <a routerLink="/transactions/home"><span id="app-title">MyWallet</span></a>
     <span class="example-spacer"></span>
     <span class="example-spacer"></span>
-    <span class="bienvenida">Bienvenido</span>
-    <mat-icon title="Logout">logout</mat-icon>
+    <span class="bienvenida">Bienvenido {{ user }}</span>
+    <mat-icon title="Logout" (click)="logout()">logout</mat-icon>
   </mat-toolbar>
   <div class="container">
     <router-outlet></router-outlet>
