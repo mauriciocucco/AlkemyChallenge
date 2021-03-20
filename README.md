@@ -1,4 +1,4 @@
-# Alkemy`s Challenge
+# Alkemy´s Challenge
 
 Proyecto correspondiente al challenge de JavaScript de **Alkemy**, en el cual se pedía desarrollar una aplicación para administración de presupuesto personal, que permita crear y editar ingresos y egresos de dinero, y mostrar un balance resultante de las
 operaciones registradas.
@@ -44,8 +44,6 @@ Una vez creada la base de datos, abrir una consola, posicionarse en _backend/src
 ```bash
 nodemon app
 ```
-
-### Nota
 
 Si todo sale bien debe aparecer en la consola lo siguiente:
 
