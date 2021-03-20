@@ -1,11 +1,11 @@
-DROP DATABASE IF EXISTS challengue;
+DROP DATABASE IF EXISTS challenge;
 
-CREATE DATABASE challengue;
+CREATE DATABASE challenge;
 
 USE challengue;
 
 CREATE TABLE usuarios (
-    id_usuario (11) AUTO_INCREMENT NOT NULL,
+    id_usuario int(11) AUTO_INCREMENT NOT NULL,
     nombre_completo varchar(36) NOT NULL,
     email varchar(36) NOT NULL,
     password varchar(40) NOT NULL,
@@ -28,20 +28,22 @@ CREATE TABLE transacciones (
     PRIMARY KEY(id_transaccion),
     CONSTRAINT FK_Usuario FOREIGN KEY (id_usuario1)
     REFERENCES usuarios(id_usuario)
-    ON DELETE CASCADE,
-    CONSTRAINT FK_Categoria FOREIGN KEY (id_categoria1)
-    REFERENCES categorias(id_categoria)
     ON DELETE CASCADE
+    -- ,CONSTRAINT FK_Categoria FOREIGN KEY (id_categoria1)
+    -- REFERENCES categorias(id_categoria)
+    -- ON DELETE CASCADE
 
 ) ENGINE=InnoDB;
 
-CREATE TABLE categorias (
-    id_categoria int(11) AUTO_INCREMENT NOT NULL,
-    nombre_categoria varchar(36) NOT NULL,
 
-    PRIMARY KEY(id_categoria)
 
-) ENGINE=InnoDB;
+-- CREATE TABLE categorias (
+--     id_categoria int(11) AUTO_INCREMENT NOT NULL,
+--     nombre_categoria varchar(36) NOT NULL,
+
+--     PRIMARY KEY(id_categoria)
+
+-- ) ENGINE=InnoDB;
 
 
 /*------TRIGGERS-------*/

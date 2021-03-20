@@ -89,8 +89,10 @@ export class ListComponent implements OnInit {
     dialog.afterClosed().subscribe((result) => {
       if (!result) {
         this.selection.clear();
+        console.log('HOOOLAAAA');
         return;
       }
+
       this.transactionsService
         .deleteTransaction(idString)
         .pipe(switchMap((resp) => this.transactionsService.getTransactions()))

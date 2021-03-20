@@ -1,5 +1,5 @@
 <div class="special-container">
-  <mat-card>
+  <mat-card class="animate__animated animate__fadeIn">
     <mat-card-header>
       <mat-card-title>Registro</mat-card-title>
     </mat-card-header>
@@ -24,7 +24,16 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
-          <input matInput formControlName="password" required type="password" />
+          <input
+            matInput
+            formControlName="password"
+            required
+            [type]="hide ? 'password' : 'text'"
+            #password
+          />
+          <mat-icon matSuffix (click)="hide = !hide" *ngIf="password.value">{{
+            hide ? "visibility_off" : "visibility"
+          }}</mat-icon>
           <mat-error *ngIf="validatorsService.noValidField('password', form)">{{
             validatorsService.getErrorMessage("password", form)
           }}</mat-error>
@@ -35,8 +44,15 @@
             matInput
             formControlName="confirm_password"
             required
-            type="password"
+            [type]="hideConfirm ? 'password' : 'text'"
+            #confirmPassword
           />
+          <mat-icon
+            matSuffix
+            (click)="hideConfirm = !hideConfirm"
+            *ngIf="confirmPassword.value"
+            >{{ hideConfirm ? "visibility_off" : "visibility" }}</mat-icon
+          >
           <mat-error
             *ngIf="validatorsService.noValidField('confirm_password', form)"
             >{{

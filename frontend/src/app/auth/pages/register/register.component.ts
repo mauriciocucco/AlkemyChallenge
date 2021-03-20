@@ -39,6 +39,8 @@ export class RegisterComponent {
       ],
     }
   );
+  hide: boolean = true;
+  hideConfirm: boolean = true;
 
   constructor(
     private fb: FormBuilder,

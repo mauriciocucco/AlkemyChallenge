@@ -23,6 +23,7 @@ export class LoginComponent {
       ],
     ],
   });
+  hide: boolean = true;
 
   constructor(
     private fb: FormBuilder,

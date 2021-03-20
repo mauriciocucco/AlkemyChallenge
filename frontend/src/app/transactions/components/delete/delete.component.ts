@@ -19,7 +19,7 @@ export class DeleteComponent {
   };
 
   delete() {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 
   close() {

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="animate__animated animate__fadeIn">
   <mat-card-header>
     <mat-card-title>Transacciones</mat-card-title>
   </mat-card-header>
@@ -89,6 +89,7 @@
       </button>
       <button
         mat-raised-button
+        class="animate__animated animate__fadeIn animate__fadeInLeft"
         color="warn"
         *ngIf="this.selection.selected.length > 0"
         (click)="delete()"
@@ -97,7 +98,7 @@
       </button>
       <button
         mat-raised-button
-        class="edit-button"
+        class="edit-button animate__animated animate__fadeIn animate__fadeInLeft"
         *ngIf="this.selection.selected.length === 1"
         (click)="edit()"
       >
