@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS challenge;
 
 CREATE DATABASE challenge;
 
-USE challengue;
+USE challenge;
 
 CREATE TABLE usuarios (
     id_usuario int(11) AUTO_INCREMENT NOT NULL,
